@@ -12,6 +12,14 @@
   const ws = new WebSocket("ws://localhost:5050/")
   ws.onmessage = function (event) {
     console.log("recv", event.data);
+    /*
+      {
+        "coo": {"X": 0, "Y": 0},
+        "data": [
+          {"name": 0, "distance": 314.47481604473296, "coordinates": {"X": 1.0, "Y": 1.0}}
+        ]
+      }
+     */
   };
   ws.onclose = function () {
     console.log("deconnected");
