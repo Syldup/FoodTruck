@@ -29,8 +29,8 @@ async def recv(websocket: websockets.WebSocketServerProtocol, path: str):
             'lon1': coo_data['X'],
             'lat1': coo_data['Y'],
         }
-        # resp = list(requests.get('http://api.github.com/position').json)
-        resp = [{'latitude': 1.0, 'longitude': 1.0, 'id': 0}]
+        resp = json.loads(requests.get('http://127.0.0.1:8080/position').text)
+        # resp = [{'latitude': 1.0, 'longitude': 1.0, 'id': 0}]
 
         data = [{
             'name': food['id'],
